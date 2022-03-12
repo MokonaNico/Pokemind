@@ -8,8 +8,6 @@ console.log(pokemon)
 
 // Display pokemon of the day as default image
 var pokemon_img = document.getElementById("img-poke");
-pokemon_img.hidden = true;
-
 
 
 // Change display pokemon when enter is pressed
