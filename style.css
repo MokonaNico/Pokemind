@@ -19,3 +19,14 @@ h1 {
 input[type="text"] {
 
 }
+
+#img-poke {
+  border: 10px solid transparent;
+  border-image: linear-gradient(red, blue) 30;
+  width: 500px;
+}
+
+#img-poke-border{
+ text-align: center;
+ padding-top: 50px;
+}

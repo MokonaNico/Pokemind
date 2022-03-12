@@ -8978,5 +8978,75 @@ pokemonlist = [
         "height": 1.1,
         "weight": 7.7,
         "gen": 8
+    },
+    {
+        "index": 899,
+        "name_eng": "Wyrdeer",
+        "name_fr": "Cerbyllin",
+        "type1": "Normal",
+        "type2": "Psychic",
+        "height": 1.8,
+        "weight": 95.1,
+        "gen": 8
+    },
+    {
+        "index": 900,
+        "name_eng": "Kleavor",
+        "name_fr": "Hachécateur",
+        "type1": "Bug",
+        "type2": "Rock",
+        "height": 1.8,
+        "weight": 89.0,
+        "gen": 8
+    },
+    {
+        "index": 901,
+        "name_eng": "Ursaluna",
+        "name_fr": "Ursaking",
+        "type1": "Normal",
+        "type2": "Ground",
+        "height": 2.4,
+        "weight": 290.0,
+        "gen": 8
+    },
+    {
+        "index": 902,
+        "name_eng": "Basculegion",
+        "name_fr": "Paragruel",
+        "type1": "Water",
+        "type2": "Ghost",
+        "height": 3.0,
+        "weight": 110.0,
+        "gen": 8
+    },
+    {
+        "index": 903,
+        "name_eng": "Sneasler",
+        "name_fr": "Farfurex",
+        "type1": "Poison",
+        "type2": "Fighting",
+        "height": 1.3,
+        "weight": 43.0,
+        "gen": 8
+    },
+    {
+        "index": 904,
+        "name_eng": "Overqwil",
+        "name_fr": "Qwilpik",
+        "type1": "Dark",
+        "type2": "Poison",
+        "height": 2.5,
+        "weight": 60.5,
+        "gen": 8
+    },
+    {
+        "index": 905,
+        "name_eng": "Enamorus",
+        "name_fr": "Amovénus",
+        "type1": "Fairy",
+        "type2": "Flying",
+        "height": 1.6,
+        "weight": 48.0,
+        "gen": 8
     }
 ]

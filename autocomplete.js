@@ -13,10 +13,9 @@ for (i = 0 ; i < autofill_list.length ; i += 1) {
 }
 container.appendChild(dl);
 
-function input_enter(value){
-    if(event.key === 'Enter') {
-        console.log(value);     
-    }
+function pad(num, size) {
+    num = num.toString();
+    while (num.length < size) num = "0" + num;
+    return num;
 }
-
 

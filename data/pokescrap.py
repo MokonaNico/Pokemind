@@ -82,9 +82,10 @@ def create_db_from_web():
 
 
 
-df = pandas.read_csv('pokedb.csv')
+#df = pandas.read_csv('pokedb.csv')
 
-plt.plot((list(df['weight'])))
-plt.show()
+#plt.plot((list(df['weight'])))
+#plt.show()
 #df.to_csv('pokedb.csv', index=False)
-#df.to_json('pokedb.json',orient="records")
+df = create_db_from_web()
+df.to_json('pokedb.json',orient="records")
