@@ -22,11 +22,15 @@ input[type="text"] {
 
 #img-poke {
   border: 10px solid transparent;
-  border-image: linear-gradient(red, blue) 30;
+  border-image: linear-gradient(red, blue) 10;
   width: 500px;
 }
 
 #img-poke-border{
  text-align: center;
  padding-top: 50px;
+}
+
+#notfoundtext{
+  color: red;
 }

@@ -5,20 +5,22 @@
         <title>Nicolas Vallois - Wordle</title>
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="data/pokedb.js" defer></script>
-        <script type="text/javascript" src="random.js" defer></script>
-        <script type="text/javascript" src="autocomplete.js" defer></script>
-        <script type="text/javascript" src="wordle.js" defer></script>
+        <script type="text/javascript" src="script/utils.js" defer></script>
+        <script type="text/javascript" src="script/random.js" defer></script>
+        <script type="text/javascript" src="script/autocomplete.js" defer></script>
+        <script type="text/javascript" src="script/wordle.js" defer></script>
     </head>
 
     <body>
         <h1>Poke Wordle !</h1>
         <div class="inputzone">
             <input type="text" id="pokeinput" autocomplete="off" list="autofill_list" onkeyup="input_enter(this.value)">
-        </div>
-        <div id="img-poke-border">
-            <img id="img-poke"/> 
+            <p id="notfoundtext"></p>
         </div>
 
- 
+        <div id="img-poke-border">
+            <img id="img-poke"/>
+        </div>
+
     </body>
 </html>

@@ -13,13 +13,23 @@ pokemon_img.hidden = true;
 
 
 // Change display pokemon when enter is pressed
+var not_found_text = document.getElementById("notfoundtext");
 function input_enter(value){
     if(event.key === 'Enter') {  
+        pokemon_img.hidden = true;
+        if(value == ""){
+            not_found_text.innerHTML = "";
+            return;
+        }
+
         let find = pokemonlist.filter(p => p.name_fr == value);
         if(find.length == 1){
         	pokemon = find[0];
         	pokemon_img.src = "data/img/"+pad(pokemon.index,3)+".jpg";
             pokemon_img.hidden = false;
+            not_found_text.innerHTML = ""
+        } else {
+            not_found_text.innerHTML = "Ce pokemon n'existe pas !"
         }
     }
 }
