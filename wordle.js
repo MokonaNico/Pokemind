@@ -8,18 +8,18 @@ console.log(pokemon)
 
 // Display pokemon of the day as default image
 var pokemon_img = document.getElementById("img-poke");
-pokemon_img.src = "data/img/"+pad(pokemon.index,3)+".jpg"
+pokemon_img.hidden = true;
 
 
 
 // Change display pokemon when enter is pressed
 function input_enter(value){
-    if(event.key === 'Enter') {
-        console.log(value);     
+    if(event.key === 'Enter') {  
         let find = pokemonlist.filter(p => p.name_fr == value);
         if(find.length == 1){
         	pokemon = find[0];
         	pokemon_img.src = "data/img/"+pad(pokemon.index,3)+".jpg";
+            pokemon_img.hidden = false;
         }
     }
 }
