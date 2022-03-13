@@ -1,3 +1,4 @@
+/* GENERAL */
 * 
 {
     font-family: 'Helvetica',Arial,sans-serif;
@@ -12,18 +13,28 @@ h1 {
   color: white;
 }
 
+
+
+
+/* INPUT */ 
 .inputzone{
+  padding-top: 25px;
   text-align:center 
 }
 
-input[type="text"] {
-
+#notfoundtext{
+  color: red;
 }
 
+
+
+
+
+/* IMAGE */
 #img-poke {
   border: 10px solid transparent;
   border-image: linear-gradient(red, blue) 10;
-  width: 500px;
+  width: 50%;
 }
 
 #img-poke-border{
@@ -31,6 +42,77 @@ input[type="text"] {
  padding-top: 50px;
 }
 
-#notfoundtext{
-  color: red;
+
+
+
+
+/* GRILLE */
+.grid{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+}
+
+.tile{
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  width: 60px;
+  height: 60px;
+  margin: 2.5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: cover;
+}
+
+.answer{
+  color: white;
+  align-items: left;
+  display: flex;
+}
+
+.title{
+  color:  white;
+  font-size: 18px;
+  width: 60px;
+  height: 20px;
+  margin: 4.5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+#game{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 4px;
+  grid-template-columns: 25% auto 25%;
+}
+
+#answers{
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+.answer{
+  color:  white;
+  font-size: 20px;
+  padding-top: 47px;
+}
+
+#foundtext{
+  font-size: 18px;
+  color: white;
+  text-align: center;
 }

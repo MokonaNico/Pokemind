@@ -13,14 +13,28 @@
 
     <body>
         <h1>Poke Wordle !</h1>
+
+        <div id="game">
+            <div id="found">
+                <p id="foundtext"></p>
+                <div id="img-poke-border">
+                    <img id="img-poke"/ hidden=True>
+                </div>
+            </div>
+            <div id="board" class="grid"></div>
+            <div id="answers"></div>
+        </div>
+
+        
+
         <div class="inputzone">
             <input type="text" id="pokeinput" autocomplete="off" list="autofill_list" onkeyup="input_enter(this.value)">
             <p id="notfoundtext"></p>
         </div>
 
-        <div id="img-poke-border">
-            <img id="img-poke"/ hidden=True>
-        </div>
+
+
+
 
     </body>
 </html>
