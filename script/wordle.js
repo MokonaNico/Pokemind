@@ -6,6 +6,38 @@ var board = document.getElementById("board");
 var not_found_text = document.getElementById("notfoundtext");
 var found_text = document.getElementById("foundtext");
 
+var current_guess = 0;
+var already_guess = [];
+var answer_list = [];
+
+var todaypkm = getPokemonOfTheDay();
+var found = false;
+console.log(todaypkm);
+
+
+
+
+
+var images = [];
+function preload() {
+    for (var i = 0; i < arguments.length; i++) {
+        images[i] = new Image();
+        images[i].src = preload.arguments[i];
+    }
+}
+
+//-- usage --//
+preload(
+    "image/ok.png",
+    "image/nok.png",
+    "image/down.png",
+    "image/up.png",
+    "data/img/"+pad(todaypkm.index,3)+".jpg"
+)
+
+
+
+
 /*
 Return the pokemon of the day
 */
@@ -77,41 +109,43 @@ function guessing_pokemon(pokemon){
     var answer = answer_list[current_guess];
     answer.innerHTML = pokemon.name_fr;
 
+    console.log(images[0].src)
+
     if(pokemon.type1 == todaypkm.type1){
-        tiles[current_guess][0].style.backgroundImage = "url('image/ok.png')"; 
+        tiles[current_guess][0].style.backgroundImage = "url("+images[0].src+")"; 
     } else {
-        tiles[current_guess][0].style.backgroundImage = "url('image/nok.png')"; 
+        tiles[current_guess][0].style.backgroundImage = "url("+images[1].src+")"; 
     }
 
     if(pokemon.type2 == todaypkm.type2){
-        tiles[current_guess][1].style.backgroundImage = "url('image/ok.png')"; 
+        tiles[current_guess][1].style.backgroundImage = "url("+images[0].src+")"; 
     } else {
-        tiles[current_guess][1].style.backgroundImage = "url('image/nok.png')"; 
+        tiles[current_guess][1].style.backgroundImage = "url("+images[1].src+")"; 
     }
 
     if(Math.abs( pokemon.height - todaypkm.height ) < 0.1){
-        tiles[current_guess][2].style.backgroundImage = "url('image/ok.png')"; 
+        tiles[current_guess][2].style.backgroundImage = "url("+images[0].src+")"; 
     } else if (pokemon.height > todaypkm.height) {
-        tiles[current_guess][2].style.backgroundImage = "url('image/down.png')"; 
+        tiles[current_guess][2].style.backgroundImage = "url("+images[2].src+")"; 
     } else {
-        tiles[current_guess][2].style.backgroundImage = "url('image/up.png')";
+        tiles[current_guess][2].style.backgroundImage = "url("+images[3].src+")";  
     }
 
     if(Math.abs( pokemon.weight - todaypkm.weight ) < 0.1){
-        tiles[current_guess][3].style.backgroundImage = "url('image/ok.png')"; 
+        tiles[current_guess][3].style.backgroundImage = "url("+images[0].src+")"; 
     } else if (pokemon.weight > todaypkm.weight) {
-        tiles[current_guess][3].style.backgroundImage = "url('image/down.png')"; 
+        tiles[current_guess][3].style.backgroundImage = "url("+images[2].src+")"; 
     } else {
-        tiles[current_guess][3].style.backgroundImage = "url('image/up.png')";
+        tiles[current_guess][3].style.backgroundImage = "url("+images[3].src+")"; 
     }
 
 
     if(pokemon.gen == todaypkm.gen){
-        tiles[current_guess][4].style.backgroundImage = "url('image/ok.png')"; 
+        tiles[current_guess][4].style.backgroundImage = "url("+images[0].src+")"; 
     } else if (pokemon.gen > todaypkm.gen) {
-        tiles[current_guess][4].style.backgroundImage = "url('image/down.png')"; 
+        tiles[current_guess][4].style.backgroundImage = "url("+images[2].src+")"; 
     } else {
-        tiles[current_guess][4].style.backgroundImage = "url('image/up.png')";
+        tiles[current_guess][4].style.backgroundImage = "url("+images[3].src+")";  
     }
 
 
@@ -119,7 +153,7 @@ function guessing_pokemon(pokemon){
     if(pokemon == todaypkm){
         answer.style.color = "green"
         found = true;
-        pokemon_img.src = "data/img/"+pad(pokemon.index,3)+".jpg";
+        pokemon_img.src = images[4].src;
         pokemon_img.hidden = false;
         found_text.innerHTML = "Tu as trouvé le pokémon du jour !"
     } else {
@@ -153,44 +187,5 @@ function input_enter(value){
 }
 
 
-var current_guess = 0;
-var already_guess = [];
-var answer_list = [];
 
-
-
-
-var todaypkm = getPokemonOfTheDay();
-var found = false;
-console.log(todaypkm);
-createGrid()
-
-
-
-
-/*
-// Display pokemon of the day as default image
-
-
-// Change display pokemon when enter is pressed
-var not_found_text = document.getElementById("notfoundtext");
-function input_enter(value){
-    if(event.key === 'Enter') {  
-        pokemon_img.hidden = true;
-        if(value == ""){
-            not_found_text.innerHTML = "";
-            return;
-        }
-
-        let find = pokemonlist.filter(p => p.name_fr == value);
-        if(find.length == 1){
-        	pokemon = find[0];
-        	pokemon_img.src = "data/img/"+pad(pokemon.index,3)+".jpg";
-            pokemon_img.hidden = false;
-            not_found_text.innerHTML = ""
-        } else {
-            not_found_text.innerHTML = "Ce pokemon n'existe pas !"
-        }
-    }
-}
-*/
+createGrid();
