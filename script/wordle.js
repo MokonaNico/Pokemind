@@ -105,8 +105,6 @@ function guessing_pokemon(pokemon){
     var answer = answer_list[current_guess];
     answer.innerHTML = pokemon.name_fr;
 
-    console.log(images[0].src)
-
     if(pokemon.type1 == todaypkm.type1){
         tiles[current_guess][0].style.backgroundImage = "url("+images[0].src+")"; 
     } else {
@@ -156,8 +154,13 @@ function guessing_pokemon(pokemon){
         answer.style.color = "red"
     }
 
-
     current_guess++;
+
+    if(current_guess == NUMBER_OF_GUESSES){
+        found = true; //Stop getting input
+        found_text.innerHTML = "Dommage, tu n'as pas trouvé le pokémon :(";
+        found_text.style.color = "red";
+    }
 }
 
 
