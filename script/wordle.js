@@ -12,10 +12,6 @@ var answer_list = [];
 
 var todaypkm = getPokemonOfTheDay();
 var found = false;
-console.log(todaypkm);
-
-
-
 
 
 var images = [];
