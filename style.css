@@ -141,3 +141,22 @@ input{
 input[type="text"] {
     font-size:2.5vh;
 }
+
+/* Table */
+td,th {
+  color:  white;
+  width: 5vh;
+}
+
+.pokedex {
+  border-spacing: 100;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.type_icon {
+  width: 4vh;
+}
+
+
